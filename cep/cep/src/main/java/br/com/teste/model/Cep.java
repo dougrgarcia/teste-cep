@@ -3,11 +3,12 @@ package br.com.teste.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Cep {
-
-	@JsonIgnoreProperties("cep")
+	//todos atributos anotados com jsonIgnore, não devem aparecer no retorno do Json 
 	private String cep;
 	
 	private String logradouro;	
@@ -16,20 +17,17 @@ public class Cep {
 	private String complemento;
 	
 	private String bairro;
-	
+
 	private String localidade;
 	
-	private String uf;
-	
+	private String uf;	
 
 	@JsonIgnoreProperties("ibge")
 	private String ibge;
 	
-
 	@JsonIgnoreProperties("gia")
 	private String gia;
 	
-
 	@JsonIgnoreProperties("ddd")
 	private String ddd;
 
@@ -53,7 +51,8 @@ public class Cep {
 	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
-
+	
+	@JsonIgnore
 	public String getComplemento() {
 		return complemento;
 	}
@@ -85,7 +84,8 @@ public class Cep {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
-
+	
+	@JsonIgnore
 	public String getIbge() {
 		return ibge;
 	}
@@ -94,6 +94,7 @@ public class Cep {
 		this.ibge = ibge;
 	}
 
+	@JsonIgnore
 	public String getGia() {
 		return gia;
 	}
@@ -102,6 +103,7 @@ public class Cep {
 		this.gia = gia;
 	}
 
+	@JsonIgnore
 	public String getDdd() {
 		return ddd;
 	}
@@ -110,6 +112,7 @@ public class Cep {
 		this.ddd = ddd;
 	}
 
+	@JsonIgnore
 	public String getSiafi() {
 		return siafi;
 	}
@@ -118,6 +121,7 @@ public class Cep {
 		this.siafi = siafi;
 	}
 
+	@JsonIgnore
 	public Map<String, Object> getAdditionalProperties() {
 		return this.additionalProperties;
 	}

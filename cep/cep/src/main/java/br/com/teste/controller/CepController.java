@@ -19,7 +19,9 @@ import java.io.FileNotFoundException;
 @RestController
 @RequestMapping("/cep")
 public class CepController {
-//	http://localhost:8080/cep/14406515
+	// API Get de consumo do Web Service VIACEP, onde é passado o "CEP" e obtem um json com o Endereço e com o status 200 - OK
+	// Em caso de não encontrar retorna uma mensagem de cep inválido com o status 404 - NOT_FOUND 
+	// exemplo de chamada: http://localhost:8080/cep/14406515
 	static String webService = "http://viacep.com.br/ws/";
 
 	@ApiOperation(value = "Retorna CEP em formato Json")
@@ -28,26 +30,26 @@ public class CepController {
 		Cep endereco = null;
 		String url = null;
 		String newCep = "";
-		
+
 		if (!Utils.validCep(cep)) {
 			return new ResponseEntity("CEP Inválido!", HttpStatus.OK);
-		}
-		;
+		};
+		
 		try {
-			while (newCep != cep) {
-				if (!newCep.isEmpty()){
+			while ((!newCep.equals(cep))) {
+				if (!newCep.isEmpty()) {
 					cep = newCep;
 				}
+				
 				url = webService + cep + "/json";
 				RestTemplate restTemplate = new RestTemplate();
 				endereco = restTemplate.getForObject(url, Cep.class);
-				
-				newCep = Utils.alterCep(endereco, cep);
 
-				if (newCep.equals(cep)) {
+				newCep = Utils.alterCep(endereco, cep);
+				
+				if (newCep.equals(cep) && (!newCep.equals("00000000"))) {
 					return new ResponseEntity<Cep>(endereco, HttpStatus.OK);
 				}
-				
 			}
 			return new ResponseEntity("CEP Inexistente!", HttpStatus.NOT_FOUND);
 
