@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import br.com.teste.model.Cep;
+import br.com.teste.utils.Utils;
 
 import java.io.FileNotFoundException;
 
@@ -16,19 +17,36 @@ import java.io.FileNotFoundException;
 @RequestMapping("/cep")
 public class CepController {
 //	http://localhost:8080/cep/14406515
-
 	static String webService = "http://viacep.com.br/ws/";
 
 	@RequestMapping(value = "/{cep}", method = RequestMethod.GET)
 	public ResponseEntity<Cep> findCep(@PathVariable String cep) throws FileNotFoundException {
-
-		String urlParaChamada = webService + cep + "/json";
-
+		Cep endereco = null;
+		String url = null;
+		String newCep = "";
+		
+		if (!Utils.validCep(cep)) {
+			return new ResponseEntity("CEP Inválido!", HttpStatus.OK);
+		}
+		;
 		try {
-			RestTemplate restTemplate = new RestTemplate();
-			Cep endereco = restTemplate.getForObject(urlParaChamada, Cep.class);
+			while (newCep != cep) {
+				if (!newCep.isEmpty()){
+					cep = newCep;
+				}
+				url = webService + cep + "/json";
+				RestTemplate restTemplate = new RestTemplate();
+				endereco = restTemplate.getForObject(url, Cep.class);
+				
+				newCep = Utils.alterCep(endereco, cep);
 
-			return new ResponseEntity<Cep>(endereco, HttpStatus.OK);
+				if (newCep.equals(cep)) {
+					return new ResponseEntity<Cep>(endereco, HttpStatus.OK);
+				}
+				
+			}
+			return new ResponseEntity("CEP Inexistente!", HttpStatus.NOT_FOUND);
+
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

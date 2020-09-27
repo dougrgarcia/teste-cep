@@ -7,12 +7,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class Cep {
 
-	@JsonIgnoreProperties({"cep"})
+	@JsonIgnoreProperties("cep")
 	private String cep;
 	
 	private String logradouro;	
 
-	@JsonIgnoreProperties({"complemento"})
+	@JsonIgnoreProperties("complemento")
 	private String complemento;
 	
 	private String bairro;
@@ -22,18 +22,18 @@ public class Cep {
 	private String uf;
 	
 
-	@JsonIgnoreProperties({"ibge"})
+	@JsonIgnoreProperties("ibge")
 	private String ibge;
 	
 
-	@JsonIgnoreProperties({"gia"})
+	@JsonIgnoreProperties("gia")
 	private String gia;
 	
 
-	@JsonIgnoreProperties({"ddd"})
+	@JsonIgnoreProperties("ddd")
 	private String ddd;
 
-	@JsonIgnoreProperties({"siafi"})
+	@JsonIgnoreProperties("siafi")
 	private String siafi;
 	
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
