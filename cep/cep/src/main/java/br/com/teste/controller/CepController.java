@@ -10,15 +10,19 @@ import org.springframework.web.client.RestTemplate;
 
 import br.com.teste.model.Cep;
 import br.com.teste.utils.Utils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 import java.io.FileNotFoundException;
 
+@Api(value = "Teste CEP")
 @RestController
 @RequestMapping("/cep")
 public class CepController {
 //	http://localhost:8080/cep/14406515
 	static String webService = "http://viacep.com.br/ws/";
 
+	@ApiOperation(value = "Retorna CEP em formato Json")
 	@RequestMapping(value = "/{cep}", method = RequestMethod.GET)
 	public ResponseEntity<Cep> findCep(@PathVariable String cep) throws FileNotFoundException {
 		Cep endereco = null;
