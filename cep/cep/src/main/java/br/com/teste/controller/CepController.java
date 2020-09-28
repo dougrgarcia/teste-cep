@@ -20,7 +20,8 @@ import java.io.FileNotFoundException;
 @RequestMapping("/cep")
 public class CepController {
 	// API Get de consumo do Web Service VIACEP, onde é passado o "CEP" e obtem um json com o Endereço e com o status 200 - OK
-	// Em caso de não encontrar retorna uma mensagem de cep inválido com o status 404 - NOT_FOUND 
+	// Se o CEP informado não tiver 8 caracteres ou tiver algum caracter não numerico, será retornado a mensagem de "CEP Invalido!" com o status 400 - BAD_REQUEST"
+	// Em caso de não encontrar retorna uma mensagem "CEP Inválido!" com o status 404 - NOT_FOUND 
 	// exemplo de chamada: http://localhost:8080/cep/14406515
 	static String webService = "http://viacep.com.br/ws/";
 
@@ -32,7 +33,7 @@ public class CepController {
 		String newCep = "";
 
 		if (!Utils.validCep(cep)) {
-			return new ResponseEntity("CEP Inválido!", HttpStatus.OK);
+			return new ResponseEntity("CEP Inválido!", HttpStatus.BAD_REQUEST);
 		};
 		
 		try {
