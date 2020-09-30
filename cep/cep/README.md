@@ -21,9 +21,12 @@ Para a documentação, foi disponibilizado este arquivo README, além dos coment
 O projeto tem o objetivo retornar o endereço do cep informado, caso não encontre vai alterando os numero da direira para a esquerda por "0" até que encontre, caso substitua todos os numero por "0" e fique "00000000" o sistema retorna "cep invalido", essa mensagem também é exibida, quando o cep não contem o numero correto de caracteres que é oito, ou que tenha algum caracter não numerico.
 
 # Instalação
-	Para a execução do projeto será necessário ter instalado na maquina o Java que pode ser baixado no link https://www.java.com/pt-BR/download/ neste link já será sugerido a versão compativel com sua maquina, basta baixar e instalar.
-	Será necessário também ter o JDK que pode ser baixado em https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html, ao entrar neste link basta baixar a versão compativel com o seu sistema operacional e instalar.
-	Também será necessário ter o SpringBoot instalado, para isso basta acessar o link https://spring.io/tools escolher a versão compativel com o seu sistema operacional e instalar.
+	Para a execução do projeto será necessário ter instalado na maquina o Java que pode ser baixado no link 
+	https://www.java.com/pt-BR/download/ neste link já será sugerido a versão compativel com sua maquina, basta baixar e instalar.
+	Será necessário também ter o JDK que pode ser baixado em https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html, a
+	o entrar neste link basta baixar a versão compativel com o seu sistema operacional e instalar.
+	Também será necessário ter o SpringBoot instalado, para isso basta acessar o link https://spring.io/tools escolher a versão 
+	compativel com o seu sistema operacional e instalar.
 
 # Importar Projeto
 	Abrir o Spring.
