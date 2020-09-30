@@ -5,9 +5,9 @@
 <!--ts-->
    * [Sobre](#Sobre)
    * [Instalação](#Instalação)
-   * [Importar Projeto](#Importar Projeto)
-   * [Executar Projeto](#Executar Projeto)
-   * [Executar Testes](#Executar Testes)
+   * [Importar_Projeto](#Importar_Projeto)
+   * [Executar_Projeto](#Executar_Projeto)
+   * [Executar_Testes](#Executar_Testes)
    * [Autor](#Autor)
 <!--te-->
 
@@ -28,7 +28,7 @@ O projeto tem o objetivo retornar o endereço do cep informado, caso não encont
 	Também será necessário ter o SpringBoot instalado, para isso basta acessar o link https://spring.io/tools escolher a versão 
 	compativel com o seu sistema operacional e instalar.
 
-# Importar Projeto
+# Importar_Projeto
 	Abrir o Spring.
 	Clicar em "File".
 	Clicar em "Import".
@@ -36,7 +36,7 @@ O projeto tem o objetivo retornar o endereço do cep informado, caso não encont
 	Clicar em "Browse", escolher o diretorio onde está o projeto.
 	Clicar em "Finish".
 
-# Executar Projeto
+# Executar_Projeto
 #### Após abrir o projeto no Spring, na lateral esquerda na aba denominada "Workspace", aparecerá o projeto denominado "cep", basta:
 	clicar com o botão direito do mouse sobre "cep"
 	clicar em "Run As" 
@@ -46,7 +46,7 @@ O projeto tem o objetivo retornar o endereço do cep informado, caso não encont
 #### Exemplo de uso: http://localhost:8080/cep/14406515
 #### Também é possivel executar a api e ver exemplos acessando "http://localhost:8080/swagger-ui.html" que é o link da documentação utilizando o Swagger.
 
-# Executar Testes
+# Executar_Testes
 Para a execução da classe de testes basta abrir o Projeto no SpringBoot e na aba "Workspaces" navehar até o diretorio "/cep/src/test/java/br/com/teste/cep", neste momento será possivel ver uma classe chamada "CepApplicationTests.java", basta clicar com o botão direito do mouse sobre esta classe e clicar em:
 	Run As
 	JUnit Test
