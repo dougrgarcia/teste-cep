@@ -1,6 +1,6 @@
-#Teste CEP
+## Teste CEP
 
-###API para retorno do endereço do CEP informado
+### API para retorno do endereço do CEP informado
 
 <!--ts-->
    * [Sobre](#Sobre)
