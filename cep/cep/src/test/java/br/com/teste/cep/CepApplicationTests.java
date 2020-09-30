@@ -11,6 +11,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import br.com.teste.model.Cep;
 import br.com.teste.utils.Utils;
 
+// obs: abaixo foi feito o testes da api e dos metodos usador pela api
+// esses testes "redundantes" foi feito propositalmente, pois com essa redundancia, caso falhe algum teste da api
+// e não falhe os metodos usados, pode ser uma falha no consumo do webservise utilizado, ou até mesmo uma alteração 
+// na neste webservice 
 @WebMvcTest
 class CepApplicationTests {
 
