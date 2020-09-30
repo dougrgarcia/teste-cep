@@ -5,6 +5,7 @@
 <!--ts-->
    * [Sobre](#Sobre)
    * [Instalação](#Instalação)
+   * [Baixar_Projeto](#Baixar_Projeto)
    * [Importar_Projeto](#Importar_Projeto)
    * [Executar_Projeto](#Executar_Projeto)
    * [Executar_Testes](#Executar_Testes)
@@ -28,6 +29,12 @@ Neste link será sugerido a versão compatível  com sua máquina, basta baixar 
 Será necessário também ter o JDK que pode ser baixado em: https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html, 
 Ao entrar no link acima, basta baixar a versão compatível com o seu sistema operacional e instalar.
 Também é preciso ter o SpringBoot instalado, para isso basta acessar o link: https://spring.io/tools Sempre lembrando em escolher a versão compatível com o seu sistema operacional para instalar.
+
+# Baixar_Projeto
+	Para baixar o projeto basta ter o git instalado na sua maquina, caso não tenha baixe-o em: https://git-scm.com/downloads e instale, lembrando sempre de escolher a versão compativel com o seu S.O.
+	Crie uma pasta onde ficará o projeto.
+	Execute o Git Bash e navegue até à pasta criada
+	Já na pasta, basta colocar o comando: git clone https://github.com/dougrgarcia/teste-cep.git
 
 # Importar_Projeto
 	Abrir o Spring.
